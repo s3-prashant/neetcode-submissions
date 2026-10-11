@@ -1,0 +1,29 @@
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        if n<=2:
+            return n
+        stairs = [0]*(n+1)
+        stairs[0] = 0
+        stairs[1] = 1
+        stairs[2] =2
+        for i in range(3 ,n+1):
+            stairs[i] = stairs[i-1]+stairs[i-2]
+        return stairs[-1]
+        
+        # mem =[None]*n
+
+        # def dfs(i):
+        #     if i >=n :
+        #         return i ==n
+        #     if mem[i] is not None:
+        #         return mem[i]
+        #     mem[i] =dfs(i+2)+dfs(i+1)
+        #     return mem[i]
+        # return dfs(0)
+        # def stairs(i):
+           
+        #     if i >=n:
+        #         return i==n
+        #     return  stairs(i+1)+stairs(i+2)
+        # return stairs(0)
+       
